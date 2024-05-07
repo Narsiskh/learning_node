@@ -23,6 +23,6 @@ const logger = require('./logger')
 // logger = 1 // TypeError: Assignment to constant variable.
 
 // console.log(logger) // { log: [Function: log] }
-logger.log('message') // message
+// logger.log('message') // message
 // If it is a function:
-// logger('message') // message
+logger('message') // message
