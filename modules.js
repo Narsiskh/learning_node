@@ -1,5 +1,5 @@
 /* Here is our main module */
-console.log(module);
+// console.log(module);
 // Module {
 //   id: '.',
 //   path: '/home/narsis/Project/learning_node',
@@ -15,3 +15,14 @@ console.log(module);
 //     '/node_modules'
 //   ]
 // }
+
+/* Loading a Module */
+// When you want to use code from another module in your file, you use the require function to import it. For example:
+
+const logger = require('./logger')
+// logger = 1 // TypeError: Assignment to constant variable.
+
+// console.log(logger) // { log: [Function: log] }
+logger.log('message') // message
+// If it is a function:
+// logger('message') // message
