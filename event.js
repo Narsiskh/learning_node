@@ -8,10 +8,16 @@ const emitter = new EventEmitter()
 // A listener is a function that will be called when that event is raised
 // `on` is an alias for `addListener` method that we use more often.
 // `on` method takes two arguments: 1) Name of the event  2) A callback function or Listener
-emitter.on('messageLogged', function (){
-    console.log('Listener called') // Listener called
+// The listener can also receive the event argument which you can call it anything such as arg, e, or eventArg
+// We can use arrow function instead of the function keyword
+emitter.on('messageLogged', (arg) => {
+    console.log('Listener called', arg) // Listener called  { id: 1, url: 'https://' }
 })
 /* Raise an event */
 // We use `emit` method to raise an event.
 // Emit basically means making a noise, or produce something - You are signaling that an event has happened
-emitter.emit('messageLogged')
+// The second argument is called event argument
+emitter.emit('messageLogged', {id: 1, url: 'https://'})
+
+/* Raise: logging (data: message) */
+emitter.emit('messageLogged', {id: 2, url: 'https://'})
